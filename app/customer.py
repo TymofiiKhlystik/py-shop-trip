@@ -1,6 +1,6 @@
 import math
 from typing import Type
-
+from car import Car
 from app.shop import Shop
 
 
@@ -10,8 +10,8 @@ class Customer:
             name: str,
             money: float,
             product_cart: dict,
-            location: int,
-            car: str
+            location: [int, int],
+            car: Car
     ) -> None:
         self.name = name
         self.money = money
