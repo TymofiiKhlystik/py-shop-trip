@@ -1,5 +1,4 @@
 import math
-from typing import Type
 from car import Car
 from app.shop import Shop
 
@@ -10,7 +9,7 @@ class Customer:
             name: str,
             money: float,
             product_cart: dict,
-            location: [int, int],
+            location: list[int, int],
             car: Car
     ) -> None:
         self.name = name
@@ -39,7 +38,7 @@ class Customer:
         print(f"{self.name} rides home")
         self.location = home_location
 
-    def buy_products(self, shop: Type[Shop], fuel_price: float) -> None:
+    def buy_products(self, shop: Shop, fuel_price: float) -> None:
         trip_distance = self.distance_to(shop) * 2
         trip_cost = self.car.trip_cost(trip_distance, fuel_price)
         products_cost = shop.calculate_products_cost(self.product_cart)
